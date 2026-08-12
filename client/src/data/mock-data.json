@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Single source of truth for all application mock data. Toggle with VITE_USE_MOCK_DATA."
+  },
+  "auth": {
+    "users": [
+      {
+        "email": "admin@qiko.local",
+        "password": "Admin123!",
+        "token": "mock-admin-session-token",
+        "user": {
+          "id": "1",
+          "email": "admin@qiko.local",
+          "user_name": "Qiko Admin",
+          "name": "Qiko Admin",
+          "team_member_role": "owner",
+          "role": "admin"
+        },
+        "subscription": {
+          "id": 1,
+          "plan_name": "Studio Pro",
+          "status": "active",
+          "billing_cycle": "monthly",
+          "subscribed": true,
+          "worker_limit": 25,
+          "stripe_price": "price_mock_pro"
+        }
+      },
+      {
+        "email": "demo@qiko.local",
+        "password": "Demo123!",
+        "token": "mock-demo-session-token",
+        "user": {
+          "id": "2",
+          "email": "demo@qiko.local",
+          "user_name": "Demo User",
+          "name": "Demo User",
+          "team_member_role": "editor",
+          "role": "user"
+        },
+        "subscription": {
+          "id": 2,
+          "plan_name": "Studio Starter",
+          "status": "active",
+          "billing_cycle": "monthly",
+          "subscribed": true,
+          "worker_limit": 25,
+          "stripe_price": "price_mock_pro"
+        }
+      }
+    ]
+  },
+  "dashboard": {
+    "stats": {
+      "totalWorkers": 3,
+      "activeWorkers": 3,
+      "totalOpportunities": 12,
+      "awaitingReview": 2,
+      "pipelineValue": 8900000,
+      "currency": "GBP"
+    },
+    "charts": {
+      "pipelineByStatus": [
+        {
+          "label": "Ingested",
+          "value": 4
+        },
+        {
+          "label": "Qualified",
+          "value": 3
+        },
+        {
+          "label": "Validated",
+          "value": 2
+        },
+        {
+          "label": "Pushed",
+          "value": 1
+        },
+        {
+          "label": "Rejected",
+          "value": 2
+        }
+      ],
+      "opportunitiesBySource": [
+        {
+          "label": "UNGM",
+          "value": 6
+        },
+        {
+          "label": "TED",
+          "value": 4
+        },
+        {
+          "label": "MANUAL",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "agents": [
+    {
+      "id": "agent-si-1",
+      "agent_unique_id": "si-deo-001",
+      "agent_name": "SI Deo",
+      "status": "ready",
+      "industry": "sales_intelligence",
+      "specialization": "Sales Intelligence",
+      "template": "sales_intelligence",
+      "studio_linked": true,
+      "professionalTitle": "Sales Intelligence Worker"
+    },
+    {
+      "id": "agent-idg-1",
+      "agent_unique_id": "idg-rfp-001",
+      "agent_name": "Pre Sales Writer",
+      "status": "ready",
+      "industry": "security",
+      "specialization": "Pre-Sales RFP Writer",
+      "template": "sales",
+      "studio_linked": true,
+      "professionalTitle": "Pre Sales Writer Worker"
+    },
+    {
+      "id": "agent-el-1",
+      "agent_unique_id": "el-finance-001",
+      "agent_name": "Essential Living Analyst",
+      "status": "ready",
+      "industry": "property",
+      "specialization": "Property Finance Specialist",
+      "template": "finance",
+      "studio_linked": true,
+      "professionalTitle": "Property Finance Specialist"
+    }
+  ],
+  "studioUser": {
+    "id": 1,
+    "email": "admin@qiko.local",
+    "user_name": "Qiko Admin",
+    "feature": {
+      "studio": {
+        "can_access": true,
+        "enabled": true
+      },
+      "team": {
+        "enabled": true,
+        "role": "owner",
+        "permissions": {
+          "can_manage_team": true,
+          "can_edit_workers": true,
+          "can_view_billing": true
+        }
+      }
+    },
+    "studio": {
+      "can_access": true,
+      "enabled": true
+    },
+    "team": {
+      "enabled": true,
+      "can_access": true
+    }
+  },
+  "team": {
+    "members": [
+      {
+        "id": 1,
+        "status": "active",
+        "role": "owner",
+        "user": {
+          "id": 1,
+          "user_name": "Qiko Admin",
+          "email": "admin@qiko.local"
+        }
+      },
+      {
+        "id": 2,
+        "status": "active",
+        "role": "editor",
+        "user": {
+          "id": 2,
+          "user_name": "Demo User",
+          "email": "demo@qiko.local"
+        }
+      },
+      {
+        "id": 10,
+        "status": "active",
+        "role": "reviewer",
+        "user": {
+          "id": 10,
+          "user_name": "Ronan Murphy",
+          "email": "ronan.murphy@idgsecurity.co.uk"
+        }
+      },
+      {
+        "id": 11,
+        "status": "active",
+        "role": "reviewer",
+        "user": {
+          "id": 11,
+          "user_name": "Sarah Okonkwo",
+          "email": "sarah.okonkwo@idgsecurity.co.uk"
+        }
+      }
+    ]
+  },
+  "assignments": {
+    "users": [
+      {
+        "id": "ronan",
+        "name": "Ronan Murphy",
+        "email": "ronan.murphy@idgsecurity.co.uk",
+        "role": "Proposal Owner",
+        "avatarInitials": "RM",
+        "active": true
+      },
+      {
+        "id": "sarah",
+        "name": "Sarah Okonkwo",
+        "email": "sarah.okonkwo@idgsecurity.co.uk",
+        "role": "Security Specialist",
+        "avatarInitials": "SO",
+        "active": true
+      },
+      {
+        "id": "james",
+        "name": "James Patel",
+        "email": "james.patel@idgsecurity.co.uk",
+        "role": "Delivery Manager",
+        "avatarInitials": "JP",
+        "active": true
+      },
+      {
+        "id": "lisa",
+        "name": "Lisa Chen",
+        "email": "lisa.chen@idgsecurity.co.uk",
+        "role": "Finance Lead",
+        "avatarInitials": "LC",
+        "active": true
+      }
+    ],
+    "rfps": [
+      {
+        "id": "rfp-nhs",
+        "title": "NHS Manned Guarding 2025",
+        "client": "NHS England",
+        "country": "United Kingdom",
+        "deadline": "2026-06-24",
+        "status": "in_progress"
+      }
+    ],
+    "sections": [
+      {
+        "id": "a1",
+        "userId": "ronan",
+        "rfpId": "rfp-nhs",
+        "sectionName": "Summary",
+        "sectionType": "Commercial",
+        "status": "completed",
+        "dueDate": "2026-06-18"
+      },
+      {
+        "id": "a2",
+        "userId": "ronan",
+        "rfpId": "rfp-nhs",
+        "sectionName": "Technical Approach",
+        "sectionType": "Technical",
+        "status": "awaiting_review",
+        "dueDate": "2026-06-20"
+      },
+      {
+        "id": "a7",
+        "userId": "sarah",
+        "rfpId": "rfp-nhs",
+        "sectionName": "Security Approach",
+        "sectionType": "Technical",
+        "status": "awaiting_review",
+        "dueDate": "2026-06-19"
+      },
+      {
+        "id": "a12",
+        "userId": "lisa",
+        "rfpId": "rfp-nhs",
+        "sectionName": "Pricing & Commercial",
+        "sectionType": "Commercial",
+        "status": "assigned",
+        "dueDate": "2026-06-12"
+      }
+    ]
+  },
+  "salesIntel": {
+    "agentId": "si-deo-001",
+    "sources": [
+      {
+        "id": "src-ungm",
+        "sourceKey": "ungm",
+        "name": "UNGM Public Notices",
+        "type": "portal",
+        "isActive": true,
+        "canScan": true,
+        "scanCadence": "minutely",
+        "lastScanAt": "2026-07-16T15:15:00.000Z",
+        "nextScanAt": "2026-07-16T15:16:00.000Z",
+        "lastScanStatus": "success",
+        "opportunitiesFound": 6
+      },
+      {
+        "id": "src-ted",
+        "sourceKey": "ted",
+        "name": "TED - EU Tenders",
+        "type": "portal",
+        "isActive": true,
+        "canScan": true,
+        "scanCadence": "hourly",
+        "lastScanAt": "2026-07-16T14:00:00.000Z",
+        "nextScanAt": "2026-07-16T15:00:00.000Z",
+        "lastScanStatus": "success",
+        "opportunitiesFound": 4
+      },
+      {
+        "id": "src-manual",
+        "sourceKey": "manual",
+        "name": "Manual Upload",
+        "type": "manual",
+        "isActive": true,
+        "canScan": false,
+        "scanCadence": "manual",
+        "lastScanAt": "2026-07-14T10:00:00.000Z",
+        "lastScanStatus": "success",
+        "opportunitiesFound": 2
+      }
+    ],
+    "ingestFilters": {
+      "queryEnabled": true,
+      "queryKeyword": "security",
+      "allCountries": true,
+      "allCategories": true
+    },
+    "opportunities": [
+      {
+        "id": "101",
+        "agentId": "si-deo-001",
+        "externalId": "UNGM-2026-18492",
+        "title": "Third-Party Risk Management (TPRM) Solution",
+        "buyer": "UN Secretariat",
+        "source": "UNGM",
+        "sourceKey": "ungm",
+        "country": "United States",
+        "category": "Security Services",
+        "estimatedValue": 1200000,
+        "currency": "USD",
+        "publishedAt": "2026-07-10T00:00:00.000Z",
+        "deadlineAt": "2026-08-01T00:00:00.000Z",
+        "stage": "awaiting_review",
+        "qualificationScore": 87,
+        "humanReviewStatus": "pending",
+        "salesforcePushStatus": "not_started",
+        "createdAt": "2026-07-10T00:00:00.000Z",
+        "updatedAt": "2026-07-14T00:00:00.000Z"
+      },
+      {
+        "id": "102",
+        "agentId": "si-deo-001",
+        "externalId": "TED-2026-9021",
+        "title": "PROVISION OF DIGITAL MARKETING SERVICES FOR UNHCR",
+        "buyer": "UNHCR",
+        "source": "TED",
+        "sourceKey": "ted",
+        "country": "Switzerland",
+        "category": "Marketing",
+        "estimatedValue": 450000,
+        "currency": "EUR",
+        "publishedAt": "2026-07-11T00:00:00.000Z",
+        "deadlineAt": "2026-07-28T00:00:00.000Z",
+        "stage": "validated",
+        "qualificationScore": 79,
+        "humanReviewStatus": "approved",
+        "salesforcePushStatus": "not_started",
+        "createdAt": "2026-07-11T00:00:00.000Z",
+        "updatedAt": "2026-07-14T00:00:00.000Z"
+      },
+      {
+        "id": "103",
+        "agentId": "si-deo-001",
+        "externalId": "MANUAL-001",
+        "title": "CONSTRUCTION OF 32 ff COMMUNITY SEED BANK",
+        "buyer": "FAO",
+        "source": "MANUAL",
+        "sourceKey": "manual",
+        "country": "Kenya",
+        "category": "Construction",
+        "estimatedValue": 890000,
+        "currency": "USD",
+        "publishedAt": "2026-07-12T00:00:00.000Z",
+        "deadlineAt": "2026-08-15T00:00:00.000Z",
+        "stage": "ingested",
+        "salesforcePushStatus": "not_started",
+        "createdAt": "2026-07-12T00:00:00.000Z",
+        "updatedAt": "2026-07-14T00:00:00.000Z"
+      },
+      {
+        "id": "104",
+        "agentId": "si-deo-001",
+        "externalId": "UNGM-2026-19001",
+        "title": "Managed Detection & Response (MDR) Services — UNHQ",
+        "buyer": "UNHQ",
+        "source": "UNGM",
+        "sourceKey": "ungm",
+        "country": "United States",
+        "category": "Cybersecurity",
+        "estimatedValue": 2100000,
+        "currency": "USD",
+        "publishedAt": "2026-07-13T00:00:00.000Z",
+        "deadlineAt": "2026-08-20T00:00:00.000Z",
+        "stage": "qualified",
+        "qualificationScore": 91,
+        "humanReviewStatus": "pending",
+        "salesforcePushStatus": "not_started",
+        "createdAt": "2026-07-13T00:00:00.000Z",
+        "updatedAt": "2026-07-14T00:00:00.000Z"
+      },
+      {
+        "id": "105",
+        "agentId": "si-deo-001",
+        "externalId": "TED-2026-8800",
+        "title": "Endpoint Detection & Response Expansion Lot",
+        "buyer": "European Commission",
+        "source": "TED",
+        "sourceKey": "ted",
+        "country": "Belgium",
+        "category": "Cybersecurity",
+        "estimatedValue": 3400000,
+        "currency": "EUR",
+        "publishedAt": "2026-07-01T00:00:00.000Z",
+        "deadlineAt": "2026-07-20T00:00:00.000Z",
+        "stage": "pushed",
+        "qualificationScore": 88,
+        "humanReviewStatus": "approved",
+        "salesforcePushStatus": "success",
+        "salesforceOpportunityId": "SF-006XX00001",
+        "createdAt": "2026-07-01T00:00:00.000Z",
+        "updatedAt": "2026-07-12T00:00:00.000Z"
+      },
+      {
+        "id": "106",
+        "agentId": "si-deo-001",
+        "externalId": "UNGM-2026-REJECT",
+        "title": "asdasd",
+        "buyer": "IOM",
+        "source": "UNGM",
+        "sourceKey": "ungm",
+        "country": "Switzerland",
+        "category": "Other",
+        "stage": "rejected",
+        "humanReviewStatus": "rejected",
+        "salesforcePushStatus": "not_started",
+        "createdAt": "2026-07-14T00:00:00.000Z",
+        "updatedAt": "2026-07-14T00:00:00.000Z"
+      }
+    ],
+    "activityLogs": [
+      {
+        "id": 1,
+        "action": "source_scan",
+        "activityType": "source_scan",
+        "detail": "UNGM scan completed — 6 opportunities kept",
+        "tone": "success",
+        "createdAt": "2026-07-16T15:15:00.000Z"
+      },
+      {
+        "id": 2,
+        "action": "review_approved",
+        "activityType": "opportunity",
+        "opportunityId": 102,
+        "detail": "Opportunity validated for Salesforce push",
+        "tone": "success",
+        "createdAt": "2026-07-14T12:00:00.000Z"
+      },
+      {
+        "id": 3,
+        "action": "salesforce_push",
+        "activityType": "opportunity",
+        "opportunityId": 105,
+        "detail": "Pushed to Salesforce SF-006XX00001",
+        "tone": "success",
+        "createdAt": "2026-07-12T16:42:00.000Z"
+      }
+    ],
+    "scanHistory": [
+      {
+        "id": 1,
+        "sourceKey": "ungm",
+        "status": "success",
+        "action": "portal_scan",
+        "opportunitiesFound": 6,
+        "createdAt": "2026-07-16T15:15:00.000Z"
+      },
+      {
+        "id": 2,
+        "sourceKey": "ted",
+        "status": "success",
+        "action": "portal_scan",
+        "opportunitiesFound": 4,
+        "createdAt": "2026-07-16T14:00:00.000Z"
+      },
+      {
+        "id": 3,
+        "sourceKey": "ungm",
+        "status": "failed",
+        "action": "portal_scan",
+        "opportunitiesFound": 0,
+        "detail": "Portal timeout",
+        "createdAt": "2026-07-12T07:04:00.000Z"
+      }
+    ],
+    "decisionHistory": [
+      {
+        "id": 1,
+        "decision": "approved",
+        "opportunityId": 102,
+        "opportunityTitle": "PROVISION OF DIGITAL MARKETING SERVICES FOR UNHCR",
+        "action": "review_approved",
+        "reviewer": {
+          "id": 10,
+          "userName": "Ronan Murphy",
+          "email": "ronan.murphy@idgsecurity.co.uk"
+        },
+        "createdAt": "2026-07-14T12:00:00.000Z"
+      },
+      {
+        "id": 2,
+        "decision": "rejected",
+        "opportunityId": 106,
+        "opportunityTitle": "asdasd",
+        "action": "review_rejected",
+        "reviewer": {
+          "id": 11,
+          "userName": "Sarah Okonkwo",
+          "email": "sarah.okonkwo@idgsecurity.co.uk"
+        },
+        "detail": "Out of scope",
+        "createdAt": "2026-07-14T11:30:00.000Z"
+      }
+    ],
+    "notifications": [
+      {
+        "id": "n1",
+        "type": "review_required",
+        "notifyType": "idg_sales",
+        "title": "Review required",
+        "body": "Managed Detection & Response (MDR) Services — UNHQ is ready for human validation.",
+        "createdAt": "2026-07-13T09:18:00.000Z",
+        "read": false,
+        "metadata": {
+          "opportunityTitle": "Managed Detection & Response (MDR) Services — UNHQ"
+        }
+      },
+      {
+        "id": "n2",
+        "type": "deadline_reminder",
+        "notifyType": "idg_sales",
+        "title": "Deadline in 3 days",
+        "body": "Cloud Security Posture Management Framework closes soon. Confirm bid intent.",
+        "createdAt": "2026-07-13T08:05:00.000Z",
+        "read": false,
+        "metadata": {
+          "dueInDays": 3
+        }
+      },
+      {
+        "id": "n3",
+        "type": "sf_sync_success",
+        "notifyType": "idg_sales",
+        "title": "Salesforce sync successful",
+        "body": "Endpoint Detection & Response Expansion Lot was created in Salesforce.",
+        "createdAt": "2026-07-12T16:42:00.000Z",
+        "read": false
+      },
+      {
+        "id": "n4",
+        "type": "scan_failed",
+        "notifyType": "idg_sales",
+        "title": "Portal scan failed",
+        "body": "UNGM scan aborted after timeout. Re-run from Ingestion when the portal is reachable.",
+        "createdAt": "2026-07-12T07:04:00.000Z",
+        "read": true
+      }
+    ],
+    "salesforce": {
+      "connected": false,
+      "status": "disconnected",
+      "configured": true,
+      "oauthCallbackUrl": "https://stage-backend.qiko.ai/api/avatar/idg-sales/oauth/callback"
+    }
+  },
+  "financial": {
+    "stats": {
+      "totalIncome": 2450000,
+      "totalExpenses": 1820000,
+      "netOperatingIncome": 630000,
+      "currency": "GBP",
+      "propertyCount": 24
+    },
+    "properties": [
+      {
+        "staNo": "ELR0201",
+        "name": "88-90 Commercial Street, E1 6LY"
+      },
+      {
+        "staNo": "ELR0202",
+        "name": "148-150 Commercial Street, E1 6NU"
+      },
+      {
+        "staNo": "ELR0203",
+        "name": "152-154 Curtain Road, EC2 3AT"
+      },
+      {
+        "staNo": "ELR0204",
+        "name": "61 Old Compton Street, W1D 6HS"
+      },
+      {
+        "staNo": "ELR0205",
+        "name": "79 & 81 Regents Park Road"
+      },
+      {
+        "staNo": "ELR0206",
+        "name": "1 Waterson Street"
+      },
+      {
+        "staNo": "ELR0207",
+        "name": "72 Old Compton Street"
+      },
+      {
+        "staNo": "ELR0208",
+        "name": "2 Anns Place, Wentworth Street"
+      },
+      {
+        "staNo": "ELR0209",
+        "name": "12 Hoxton Market"
+      },
+      {
+        "staNo": "ELR0210",
+        "name": "Hurley Apartments, 1a Highgate Road"
+      },
+      {
+        "staNo": "ELR0211",
+        "name": "41 Fortess Road"
+      },
+      {
+        "staNo": "ELR0212",
+        "name": "89-91 Wimbledon High Street"
+      },
+      {
+        "staNo": "ELR0213",
+        "name": "Mandrell & Mauleverer Road"
+      },
+      {
+        "staNo": "ELR0214",
+        "name": "30 & 31 Old Gloucester Street"
+      },
+      {
+        "staNo": "ELR0215",
+        "name": "15 Highgate Road, NW5 1QX"
+      },
+      {
+        "staNo": "ELR0216",
+        "name": "30-38 Northcote Road"
+      },
+      {
+        "staNo": "ELR0217",
+        "name": "88 Borough High Street"
+      },
+      {
+        "staNo": "ELR0218",
+        "name": "48 Newman Street"
+      },
+      {
+        "staNo": "ELR0219",
+        "name": "60 & 61 Chandos Place"
+      },
+      {
+        "staNo": "ELR0220",
+        "name": "86 Commercial Street"
+      },
+      {
+        "staNo": "ELR0221",
+        "name": "29-31 Rathbone Place"
+      },
+      {
+        "staNo": "ELR0222",
+        "name": "43 Goodge Street"
+      },
+      {
+        "staNo": "ELR0223",
+        "name": "9 Independents Road"
+      },
+      {
+        "staNo": "ELR0224",
+        "name": "20-21 Kings Mews"
+      }
+    ],
+    "income": [
+      {
+        "id": "inc-1",
+        "staNo": "ELR0201",
+        "propertyName": "88-90 Commercial Street, E1 6LY",
+        "category": "Rent",
+        "amount": 12500,
+        "currency": "GBP",
+        "date": "2026-06-01"
+      },
+      {
+        "id": "inc-2",
+        "staNo": "ELR0202",
+        "propertyName": "148-150 Commercial Street, E1 6NU",
+        "category": "Rent",
+        "amount": 14200,
+        "currency": "GBP",
+        "date": "2026-06-01"
+      }
+    ],
+    "expenses": [
+      {
+        "id": "exp-1",
+        "staNo": "ELR0201",
+        "propertyName": "88-90 Commercial Street, E1 6LY",
+        "vendor": "Argent FM Ltd",
+        "category": "01 Internal Repairs & Maint",
+        "amount": 2400,
+        "currency": "GBP",
+        "date": "2026-06-05"
+      },
+      {
+        "id": "exp-2",
+        "staNo": "ELR0210",
+        "propertyName": "Hurley Apartments, 1a Highgate Road",
+        "vendor": "Bespoke Detection Services Ltd.",
+        "category": "13 Fire Alarms",
+        "amount": 890,
+        "currency": "GBP",
+        "date": "2026-06-08"
+      }
+    ],
+    "vendors": [
+      {
+        "name": "Argent FM Ltd",
+        "category": "01 Internal Repairs & Maint"
+      },
+      {
+        "name": "Bespoke Detection Services Ltd.",
+        "category": "13 Fire Alarms"
+      },
+      {
+        "name": "Boundary Gate & Barrier (Contracts) Ltd",
+        "category": "13 Access Control / Intercom"
+      },
+      {
+        "name": "Castle Water",
+        "category": "03 Water"
+      },
+      {
+        "name": "Elitenext Ltd",
+        "category": "01 Central Heating Repairs"
+      },
+      {
+        "name": "Equita",
+        "category": "03 Council Tax"
+      },
+      {
+        "name": "GB Maintenance Solutions Ltd.",
+        "category": "01 Internal Repairs & Maint"
+      },
+      {
+        "name": "Glutz UK Ltd",
+        "category": "01 Lock Repairs and Replace"
+      },
+      {
+        "name": "HRS Cleaning Ltd",
+        "category": "18 Cleaning"
+      },
+      {
+        "name": "KBO Fire & Security Ltd",
+        "category": "13 Fire Alarms"
+      },
+      {
+        "name": "LetCheck Inventories Ltd",
+        "category": "04 Check In Costs"
+      },
+      {
+        "name": "Lowe Property Care Ltd",
+        "category": "01 Plumbing & Drainage"
+      },
+      {
+        "name": "Lynx Maintenance Ltd",
+        "category": "01 Internal Repairs & Maint"
+      },
+      {
+        "name": "Mitec Safety Management Ltd",
+        "category": "13 H&S / FRA"
+      },
+      {
+        "name": "Ropetech London Limited",
+        "category": "18 Window Cleaning"
+      },
+      {
+        "name": "SPS (Specialist Property Services).",
+        "category": "01 External Repairs & Mainten"
+      },
+      {
+        "name": "Secure Tech Locksmiths Ltd",
+        "category": "01 Lock Repairs and Replace"
+      },
+      {
+        "name": "The Grounds Care Group UK",
+        "category": "01 External Repairs & Mainten"
+      },
+      {
+        "name": "Uniguard",
+        "category": "13 CCTV"
+      }
+    ],
+    "expenseCategories": [
+      "01 Central Heating Repairs",
+      "01 Domestic Appliance Repair",
+      "01 Door Replacement & Repairs",
+      "01 External Lighting Repairs",
+      "01 External Repairs & Mainten",
+      "01 Fixtures & Fittings",
+      "01 Internal Repairs & Maint",
+      "01 Kitchen & Bathroom Fittings",
+      "01 Lock Repairs and Replace",
+      "01 Plumbing & Drainage",
+      "03 Council Tax",
+      "03 Electricity",
+      "03 Heat & Hot Water",
+      "03 Water",
+      "04 Check In Costs",
+      "04 Check Out Costs",
+      "07 Electrical Works",
+      "13 Access Control / Intercom",
+      "13 CCTV",
+      "13 Emergency Lighting",
+      "13 Fire Alarms",
+      "13 Fire Extinguishers",
+      "13 Gas Service & Test",
+      "13 H&S / FRA",
+      "13 M&E Sundry",
+      "13 Smoke Extract System",
+      "18 Cleaning",
+      "18 Window Cleaning"
+    ],
+    "incomeCategories": [
+      "Rent",
+      "Service Charges",
+      "Parking",
+      "Storage",
+      "Late Fees"
+    ],
+    "months": [
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02"
+    ]
+  },
+  "crm": {
+    "contacts": [
+      {
+        "id": "c1",
+        "name": "Alex Morgan",
+        "email": "alex.morgan@example.com",
+        "company": "Acme Corp",
+        "status": "active"
+      },
+      {
+        "id": "c2",
+        "name": "Jordan Lee",
+        "email": "jordan.lee@example.com",
+        "company": "Northwind",
+        "status": "lead"
+      }
+    ]
+  },
+  "forms": {
+    "opportunityDefaults": {
+      "currency": "USD",
+      "sourceKey": "manual",
+      "stage": "ingested"
+    },
+    "tenderPdfFallbackUrl": "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf"
+  },
+  "rfp": {
+    "sections": [
+      {
+        "id": 1,
+        "name": "Executive Summary",
+        "page": 12,
+        "weighting": "10%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q1_1",
+            "text": "Provide an executive summary of your organisation's experience delivering manned guarding services to NHS and public sector clients. Include relevant certifications, team size, and delivery model.",
+            "wordLimit": "500",
+            "aiResponse": "IDG Security is pleased to submit this proposal in response to NHS Trust's requirement for Manned Guarding Services.\n\nEstablished in 2008, IDG Security has built a distinguished reputation as a specialist provider of physical security services, with particular expertise in deploying highly trained Gurkha security professionals. Our team of 340+ operatives currently protects over 45 sites across the UK, including 12 NHS facilities.\n\nOur delivery model centres on three pillars:\n1. Gurkha Excellence — Our operatives bring military-grade discipline, situational awareness, and an unmatched work ethic\n2. 24/7 Operations Centre — Real-time monitoring and rapid response from our Manchester hub\n3. Local Account Management — Dedicated managers within 30 minutes of every site\n\nKey certifications: SIA Approved Contractor, ISO 9001:2015, ISO 45001, NHS Security Management Standards, Cyber Essentials Plus.",
+            "confidence": 94,
+            "sources": [
+              "IDG Security Corporate Overview 2024",
+              "NHS Contract Portfolio"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q1_2",
+            "text": "Summarise your organisation's financial stability and insurance coverage relevant to this contract.",
+            "wordLimit": "300",
+            "aiResponse": "IDG Security maintains robust financial health with consistent year-on-year revenue growth of 18% over the past 5 years. Our current annual turnover exceeds £12M.\n\nInsurance coverage:\n- Public Liability: £10M\n- Employer's Liability: £10M\n- Professional Indemnity: £5M\n- Fidelity Guarantee: £1M per employee\n\nWe maintain a minimum 3-month cash reserve to ensure operational continuity and have never defaulted on a contract obligation.",
+            "confidence": 87,
+            "sources": [
+              "IDG Financial Statements 2024",
+              "Insurance Certificate Pack"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q1_3",
+            "text": "Describe any current or pending litigation that may affect your ability to deliver this contract.",
+            "wordLimit": "200",
+            "aiResponse": "IDG Security confirms that there is no current or pending litigation that would affect our ability to deliver this contract. We maintain a clean legal record with zero contract disputes in our 16-year operating history.",
+            "confidence": 91,
+            "sources": [
+              "IDG Legal Compliance Register 2024"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Technical Approach",
+        "page": 14,
+        "weighting": "25%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q2_1",
+            "text": "Describe your technical approach to delivering manned guarding across multiple NHS sites. Include patrol methodology, incident response, and technology integration.",
+            "wordLimit": "1,500",
+            "aiResponse": "Our technical approach to delivering manned guarding services across NHS Trust sites is built on a layered security model that combines the exceptional capabilities of our Gurkha security professionals with modern technology integration.\n\nPatrol Methodology:\nWe deploy a combination of static and mobile patrols using our proprietary patrol management system. Each Gurkha operative carries a GPS-enabled device that logs patrol checkpoints in real-time. Our standard patrol frequency is:\n- External perimeter: Every 45 minutes\n- Internal common areas: Every 30 minutes\n- High-risk zones (pharmacy, A&E): Continuous presence\n\nIncident Response:\nOur three-tier response protocol ensures appropriate escalation:\n- Tier 1 (Green): Routine — handled by on-site team within 5 minutes\n- Tier 2 (Amber): Elevated — supervisor response within 10 minutes, control room notified\n- Tier 3 (Red): Critical — full team deployment, police liaison, senior management alert within 2 minutes",
+            "confidence": 88,
+            "sources": [
+              "IDG Security Operations Manual v4.2",
+              "NHS Site Security Assessment Template"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q2_2",
+            "text": "Detail your approach to lone working and the safety measures in place for officers on isolated patrols.",
+            "wordLimit": "500",
+            "aiResponse": "All lone workers are equipped with personal safety devices featuring GPS tracking and panic button functionality. Our control room monitors all lone worker positions in real-time with automated welfare checks every 30 minutes.\n\nKey measures:\n- Mandatory buddy system for high-risk areas after dark\n- Automated check-in system with escalation if missed\n- Body-worn cameras with live streaming capability\n- Dynamic risk assessment completed at shift start",
+            "confidence": 76,
+            "sources": [
+              "IDG Lone Worker Policy"
+            ],
+            "gapFlag": true,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q2_3",
+            "text": "Explain how you will integrate with the Trust's existing access control and CCTV systems.",
+            "wordLimit": "500",
+            "aiResponse": "IDG Security has extensive experience integrating with existing building management systems. We will conduct a full technical audit of current access control and CCTV infrastructure during the mobilisation phase.\n\nOur integration approach:\n- Dedicated IT liaison to work with Trust's facilities team\n- Support for all major access control platforms (Paxton, Gallagher, AMAG)\n- CCTV monitoring training for all site supervisors\n- Daily system health checks and fault reporting",
+            "confidence": 72,
+            "sources": [
+              "IDG Technology Integration Guide"
+            ],
+            "gapFlag": true,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Staffing & Resources",
+        "page": 18,
+        "weighting": "10%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q3_1",
+            "text": "Detail proposed staffing levels, key personnel, shift patterns, and resource allocation for the contract.",
+            "wordLimit": "800",
+            "aiResponse": "IDG proposes a dedicated team of 28 Gurkha security professionals for this contract, structured as follows:\n\n- 1x Contract Manager (ex-British Army officer)\n- 3x Site Supervisors (rotating 24/7 coverage)\n- 20x Security Officers (Gurkha-trained)\n- 4x Relief Officers (covering leave and absence)\n\nShift Pattern: 4-on-4-off, 12-hour shifts (0600-1800 / 1800-0600)\nMinimum staffing: 6 officers on-site at all times across all locations.",
+            "confidence": 82,
+            "sources": [
+              "IDG Security Staffing Model 2024",
+              "Contract Deployment Calculator"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q3_2",
+            "text": "Describe your recruitment, vetting, and training pipeline for new officers joining this contract.",
+            "wordLimit": "500",
+            "aiResponse": "Our recruitment pipeline for this contract leverages our established Gurkha recruitment network in Nepal, combined with UK-based ex-military recruitment channels.\n\nVetting: All officers undergo BS7858 enhanced vetting, DBS checks, and right-to-work verification. NHS-specific security clearance obtained within 4 weeks of appointment.\n\nTraining: 40-hour induction programme covering NHS-specific protocols, conflict resolution, mental health awareness, and site-specific procedures.",
+            "confidence": 85,
+            "sources": [
+              "IDG Recruitment & Training Manual",
+              "BS7858 Compliance Records"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Past Performance",
+        "page": 24,
+        "weighting": "5%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q5_1",
+            "text": "Provide 3 relevant case studies demonstrating similar contract delivery for NHS or public sector clients.",
+            "wordLimit": "600",
+            "aiResponse": "Case Study 1: NHS Greater Manchester Hospitals — 5-year manned guarding contract covering 8 sites, £8.2M total value. Achieved 99.7% SLA compliance.\n\nCase Study 2: MOD Catterick Garrison — 3-year close protection and access control, £4.1M. Zero security breaches during tenure.\n\nCase Study 3: Transport for London — 2-year mobile patrol contract across 12 stations, £2.8M. 40% reduction in antisocial behaviour incidents.",
+            "confidence": 91,
+            "sources": [
+              "IDG Security Case Study Library",
+              "Client Testimonials Pack"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q5_2",
+            "text": "Provide contact details for two referees from contracts of similar size and scope.",
+            "wordLimit": "200",
+            "aiResponse": "Referee 1: Sarah Thompson, Head of Estates, NHS Greater Manchester — [Contact details to be confirmed by Ronan]\n\nReferee 2: Col. James Wright (Ret.), Security Director, MOD Catterick — [Contact details to be confirmed by Ronan]",
+            "confidence": 68,
+            "sources": [
+              "IDG Client Reference Database"
+            ],
+            "gapFlag": true,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Security Approach",
+        "page": 26,
+        "weighting": "5%",
+        "reviewer": "Sarah",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q6_1",
+            "text": "Describe your security framework, vetting procedures, and data handling for NHS environments.",
+            "wordLimit": "800",
+            "aiResponse": "Our security framework is built on SIA Approved Contractor status with enhanced BS7858 vetting for all personnel. For NHS environments, we implement additional controls:\n\n- Enhanced DBS checks for all staff\n- NHS-specific data handling training (GDPR + Caldicott principles)\n- Secure communications protocols\n- Regular security awareness refresher training",
+            "confidence": 72,
+            "sources": [
+              "IDG Security Framework Document",
+              "NHS Data Handling Policy"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q6_2",
+            "text": "How do you ensure compliance with NHS Information Governance requirements?",
+            "wordLimit": "400",
+            "aiResponse": "All IDG personnel complete the NHS Data Security Awareness Level 1 training prior to deployment. We maintain a dedicated Information Governance Officer who liaises with Trust IG leads.\n\nKey measures:\n- Annual IG toolkit self-assessment\n- Encrypted mobile devices for all supervisors\n- Clear desk policy in security control rooms\n- Incident reporting within 24 hours to Trust IG team",
+            "confidence": 65,
+            "sources": [
+              "NHS IG Toolkit Requirements"
+            ],
+            "gapFlag": true,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Compliance",
+        "page": 28,
+        "weighting": "3%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q7_1",
+            "text": "Detail regulatory compliance approach including NHS security standards, SIA licensing, and health & safety.",
+            "wordLimit": "800",
+            "aiResponse": "IDG maintains full compliance with all applicable regulations including SIA licensing, NHS SMS (Security Management Service) standards, and comprehensive H&S management under ISO 45001.\n\nAll officers hold valid SIA Door Supervisor or Security Guard licences. Our ACS (Approved Contractor Scheme) status is renewed annually with consistent scores above 130/175.",
+            "confidence": 95,
+            "sources": [
+              "IDG Compliance Register 2024",
+              "SIA ACS Certificate"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Risk Management",
+        "page": 30,
+        "weighting": "2%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q8_1",
+            "text": "Outline risk identification, mitigation, and escalation processes for the contract.",
+            "wordLimit": "500",
+            "aiResponse": "Our risk management approach follows ISO 31000 principles adapted for physical security operations. We maintain a live risk register for each contract with monthly reviews.\n\nRisk categories: Operational, Personnel, Reputational, Financial, Compliance.\nEscalation: Site Supervisor → Contract Manager → Operations Director → Board (within 4 hours for critical risks).",
+            "confidence": 86,
+            "sources": [
+              "IDG Risk Management Framework",
+              "ISO 31000 Alignment Document"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q8_2",
+            "text": "Describe your business continuity plan in the event of significant staff absence or disruption.",
+            "wordLimit": "400",
+            "aiResponse": "IDG maintains a Business Continuity Plan tested annually via tabletop exercises. Key provisions:\n\n- Relief pool of 15+ trained officers available within 4 hours\n- Mutual aid agreements with 2 partner organisations\n- Remote operations capability for control room functions\n- Pandemic response protocol (proven during COVID-19 with zero contract failures)",
+            "confidence": 83,
+            "sources": [
+              "IDG Business Continuity Plan 2024"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Implementation Plan",
+        "page": 32,
+        "weighting": "5%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q9_1",
+            "text": "Provide detailed implementation timeline and transition approach from current provider.",
+            "wordLimit": "800",
+            "aiResponse": "Our 12-week implementation plan ensures seamless transition with zero disruption to NHS services:\n\nWeeks 1-2: Contract mobilisation, key personnel appointed\nWeeks 3-4: Site surveys, risk assessments, system integration planning\nWeeks 5-8: Staff recruitment, vetting, training (including shadow shifts with incumbent)\nWeeks 9-10: Parallel running with incumbent provider\nWeeks 11-12: Full handover, go-live, 24/7 senior management presence",
+            "confidence": 79,
+            "sources": [
+              "IDG Transition Methodology",
+              "NHS Mobilisation Best Practice Guide"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q9_2",
+            "text": "What contingency measures will you put in place if the transition period is shortened?",
+            "wordLimit": "300",
+            "aiResponse": "In the event of a compressed timeline, IDG can accelerate mobilisation to 6 weeks by:\n\n- Deploying experienced officers from existing NHS contracts as interim cover\n- Fast-track vetting through our priority DBS channel\n- Parallel workstreams for training and site familiarisation\n- Senior management on-site 24/7 during first 2 weeks of operation",
+            "confidence": 74,
+            "sources": [
+              "IDG Rapid Mobilisation Protocol"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "SLAs",
+        "page": 34,
+        "weighting": "3%",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q10_1",
+            "text": "Propose service level agreements with response and resolution targets.",
+            "wordLimit": "600",
+            "aiResponse": "We propose the following SLA framework:\n\nP1 (Critical) — Response: 5 min, Resolution: 30 min\nP2 (High) — Response: 15 min, Resolution: 2 hours\nP3 (Medium) — Response: 30 min, Resolution: 4 hours\nP4 (Low) — Response: 2 hours, Resolution: 24 hours\n\nService credits apply at 2% of monthly fee per SLA breach, capped at 10% monthly.",
+            "confidence": 84,
+            "sources": [
+              "IDG Standard SLA Template v3",
+              "NHS Security SLA Benchmarks"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          },
+          {
+            "id": "q10_2",
+            "text": "How will SLA performance be measured and reported to the Trust?",
+            "wordLimit": "300",
+            "aiResponse": "Monthly performance reports delivered by the 5th working day, including:\n\n- SLA compliance dashboard (target vs actual)\n- Incident log with response/resolution times\n- Patrol completion rates\n- Staff attendance and training records\n- Quarterly business reviews with senior stakeholders",
+            "confidence": 88,
+            "sources": [
+              "IDG Reporting Framework"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Case Studies",
+        "page": 36,
+        "weighting": "2%",
+        "reviewer": "James",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q11_1",
+            "text": "Provide 2-3 detailed case studies of similar NHS/public sector manned guarding contracts.",
+            "wordLimit": "1,000",
+            "aiResponse": "Case Study 1: NHS Greater Manchester Hospitals\nContract Value: £8.2M (5 years)\nScope: 8 hospital sites, 45 officers, 24/7 coverage\nOutcome: 99.7% SLA compliance, 32% reduction in security incidents, staff satisfaction score 4.7/5\n\nCase Study 2: Ministry of Defence — Catterick Garrison\nContract Value: £4.1M (3 years)\nScope: Close protection, access control, perimeter security\nOutcome: Zero security breaches, commendation from base commander",
+            "confidence": 68,
+            "sources": [
+              "IDG Case Study Library"
+            ],
+            "gapFlag": true,
+            "status": "draft_ready"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Appendices",
+        "page": 38,
+        "weighting": "—",
+        "reviewer": "Ronan",
+        "status": "draft_ready",
+        "questions": [
+          {
+            "id": "q12_1",
+            "text": "Provide supporting documentation: org charts, certifications, references, insurance certificates.",
+            "wordLimit": "No limit",
+            "aiResponse": "Appendix A: Organisation Chart\nAppendix B: SIA ACS Certificate (Score: 138/175)\nAppendix C: ISO 9001:2015 Certificate\nAppendix D: ISO 45001 Certificate\nAppendix E: Employer's Liability Insurance (£10M)\nAppendix F: Public Liability Insurance (£10M)\nAppendix G: Professional Indemnity (£5M)\nAppendix H: Client Reference Letters (3)",
+            "confidence": 95,
+            "sources": [
+              "IDG Corporate Documentation Pack"
+            ],
+            "gapFlag": false,
+            "status": "draft_ready"
+          }
+        ]
+      }
+    ]
+  },
+  "research": {
+    "notebook": {
+      "workerName": "Alex Researcher",
+      "insights": [
+        {
+          "id": 1,
+          "text": "Regulated buyers care about audit trails more than raw model size.",
+          "note": "For enterprise deck.",
+          "groupLabel": "Takeaways",
+          "createdAt": "2026-07-15T10:00:00.000Z"
+        },
+        {
+          "id": 2,
+          "text": "Watch EU liability drafts for product teams shipping agents in 2026.",
+          "articleTitle": "Sample article",
+          "sourceUrl": "https://example.com",
+          "createdAt": "2026-07-16T10:00:00.000Z"
+        }
+      ]
+    },
+    "feed": {
+      "config": {
+        "lastRunAt": "2026-07-16T14:00:00.000Z"
+      },
+      "profile": {
+        "name": "Alex Researcher",
+        "title": "Principal Analyst",
+        "specialism": "AI markets, regulation, and product strategy for B2B teams.",
+        "topics": [
+          "AI",
+          "Policy",
+          "Enterprise",
+          "Research"
+        ]
+      },
+      "items": [
+        {
+          "id": 1,
+          "title": "Enterprise AI adoption accelerates across regulated industries",
+          "summary": "Banks and insurers are moving from pilots to production for internal copilots, with governance and audit trails as top priorities.",
+          "priority": "urgent",
+          "publishedAt": "2026-07-16T12:00:00.000Z",
+          "topics": [
+            "AI",
+            "Enterprise"
+          ],
+          "sourceName": "Demo Wire",
+          "sourceUrl": "https://example.com/article-1",
+          "content": "## Summary\n\nMock article body for the research feed."
+        },
+        {
+          "id": 2,
+          "title": "Open models narrow the gap on reasoning benchmarks",
+          "summary": "New evaluations show smaller open-weight models closing in on closed APIs on selected math and coding tasks.",
+          "priority": "high",
+          "publishedAt": "2026-07-15T12:00:00.000Z",
+          "topics": [
+            "AI",
+            "Research"
+          ],
+          "sourceName": "ArXiv digest",
+          "sourceUrl": "https://example.com/article-2"
+        },
+        {
+          "id": 3,
+          "title": "EU draft rules clarify liability for autonomous systems",
+          "summary": "A high-level overview of proposed frameworks and what product teams should track in 2026.",
+          "priority": "normal",
+          "publishedAt": "2026-07-13T12:00:00.000Z",
+          "topics": [
+            "Policy",
+            "EU"
+          ],
+          "sourceName": "Policy Review",
+          "sourceUrl": "https://example.com/article-3"
+        }
+      ],
+      "insights": [
+        {
+          "id": 101,
+          "text": "Regulated industries prioritize auditability over raw model capability.",
+          "note": "Use for enterprise pitch.",
+          "groupLabel": "Takeaways"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "id": 1,
+        "name": "BBC Technology",
+        "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+        "type": "rss",
+        "feedTitle": "BBC News — Technology",
+        "feedDescription": "Technology news from the BBC.",
+        "isActive": 1,
+        "lastFetchStatus": "success",
+        "articleCount": 24,
+        "lastScannedAt": "2026-07-16T10:00:00.000Z",
+        "topics": [
+          "news",
+          "tech"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Demo website",
+        "url": "https://example.com",
+        "type": "website",
+        "feedTitle": null,
+        "feedDescription": null,
+        "isActive": 1,
+        "lastFetchStatus": "error",
+        "errorMessage": "Demo: unreachable host (mock)",
+        "articleCount": 0,
+        "topics": []
+      }
+    ],
+    "config": {
+      "topics": [
+        "AI",
+        "Enterprise",
+        "Policy"
+      ],
+      "scheduleTime": "07:00",
+      "isScheduleActive": 1,
+      "focusPrompt": "Prioritize actionable signals for B2B buyers.",
+      "cadence": "daily",
+      "focusTopics": [
+        "AI regulation",
+        "public procurement"
+      ],
+      "maxItemsPerRun": 25,
+      "sources": [
+        {
+          "id": 1,
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/feed/",
+          "type": "rss",
+          "feedTitle": "TechCrunch",
+          "isActive": 1,
+          "lastFetchStatus": "success",
+          "articleCount": 12
+        },
+        {
+          "id": 2,
+          "name": "Demo site",
+          "url": "https://example.com",
+          "type": "website",
+          "feedTitle": null,
+          "isActive": 1,
+          "lastFetchStatus": "error",
+          "articleCount": 0
+        }
+      ]
+    }
+  }
+}

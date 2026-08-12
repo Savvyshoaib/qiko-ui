@@ -1,0 +1,40 @@
+# User Login
+POST https://stage-backend2.qiko.ai/api/avatar/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "dev1@yopmail.com",
+  "password": "Admin@123"
+}
+
+
+# User Context
+GET https://stage-backend2.qiko.ai/api/avatar/user/context
+Accept: application/json
+
+# # Chat Request
+# POST https://avatar.rentsplit.co/api/avatar/khuzaima2zz/chat
+# Content-Type: application/json
+
+# {
+#   "user_name": "khuzaima2zz",
+#   "message": "hello",
+#   "email": "ask@yopmail.com"
+# }
+
+
+###
+# Calendly: Get current user
+GET https://api.calendly.com/users/me
+Authorization: Bearer eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzczMjI5NTQ0LCJqdGkiOiIzNDExMTk2NS00Nzk1LTQ0MDUtYTVlNS1mNTE1ZjY5YjE4NGEiLCJ1c2VyX3V1aWQiOiJhYzNkMGY4NS1kYzBjLTQyZTgtYjcyMy01MzNhY2M2OGU5ZWEiLCJzY29wZSI6ImF2YWlsYWJpbGl0eTpyZWFkIGF2YWlsYWJpbGl0eTp3cml0ZSBldmVudF90eXBlczpyZWFkIGV2ZW50X3R5cGVzOndyaXRlIGxvY2F0aW9uczpyZWFkIHJvdXRpbmdfZm9ybXM6cmVhZCBzaGFyZXM6d3JpdGUgc2NoZWR1bGVkX2V2ZW50czpyZWFkIHNjaGVkdWxlZF9ldmVudHM6d3JpdGUgc2NoZWR1bGluZ19saW5rczp3cml0ZSBncm91cHM6cmVhZCBvcmdhbml6YXRpb25zOnJlYWQgb3JnYW5pemF0aW9uczp3cml0ZSB1c2VyczpyZWFkIGFjdGl2aXR5X2xvZzpyZWFkIGRhdGFfY29tcGxpYW5jZTp3cml0ZSBvdXRnb2luZ19jb21tdW5pY2F0aW9uczpyZWFkIHdlYmhvb2tzOnJlYWQgd2ViaG9va3M6d3JpdGUifQ.PC7ciKiQub9Wxmfy1cOj3vThA2hBvgv5uF6kJhuGzGciKTpIjUQzjnS8yq6vOv_wDJVc-GJwaJgtJvqp8pyq0g
+Accept: application/json
+
+###
+# Calendly: List event types (replace xxxxxxxxxx with user UUID from users/me)
+GET https://api.calendly.com/event_types?user=https://api.calendly.com/users/ac3d0f85-dc0c-42e8-b723-533acc68e9ea
+Authorization: Bearer eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzczMjI5NTQ0LCJqdGkiOiIzNDExMTk2NS00Nzk1LTQ0MDUtYTVlNS1mNTE1ZjY5YjE4NGEiLCJ1c2VyX3V1aWQiOiJhYzNkMGY4NS1kYzBjLTQyZTgtYjcyMy01MzNhY2M2OGU5ZWEiLCJzY29wZSI6ImF2YWlsYWJpbGl0eTpyZWFkIGF2YWlsYWJpbGl0eTp3cml0ZSBldmVudF90eXBlczpyZWFkIGV2ZW50X3R5cGVzOndyaXRlIGxvY2F0aW9uczpyZWFkIHJvdXRpbmdfZm9ybXM6cmVhZCBzaGFyZXM6d3JpdGUgc2NoZWR1bGVkX2V2ZW50czpyZWFkIHNjaGVkdWxlZF9ldmVudHM6d3JpdGUgc2NoZWR1bGluZ19saW5rczp3cml0ZSBncm91cHM6cmVhZCBvcmdhbml6YXRpb25zOnJlYWQgb3JnYW5pemF0aW9uczp3cml0ZSB1c2VyczpyZWFkIGFjdGl2aXR5X2xvZzpyZWFkIGRhdGFfY29tcGxpYW5jZTp3cml0ZSBvdXRnb2luZ19jb21tdW5pY2F0aW9uczpyZWFkIHdlYmhvb2tzOnJlYWQgd2ViaG9va3M6d3JpdGUifQ.PC7ciKiQub9Wxmfy1cOj3vThA2hBvgv5uF6kJhuGzGciKTpIjUQzjnS8yq6vOv_wDJVc-GJwaJgtJvqp8pyq0g
+Accept: application/json
+
+
+@

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDG Qualification Scores — Plain English Guide</title>
+    <style>
+      :root {
+        --ink: #1e293b;
+        --muted: #64748b;
+        --accent: #4f46e5;
+        --border: #e2e8f0;
+        --bg-soft: #f8fafc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        line-height: 1.55;
+        background: #fff;
+      }
+
+      .page {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 48px 40px 56px;
+      }
+
+      .toolbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .toolbar button {
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--ink);
+        border-radius: 8px;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .toolbar button.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin: 0 0 8px;
+        color: #0f172a;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 15px;
+        margin: 0 0 28px;
+      }
+
+      .intro {
+        background: var(--bg-soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin-bottom: 28px;
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin: 32px 0 10px;
+        color: #0f172a;
+        page-break-after: avoid;
+      }
+
+      h3 {
+        font-size: 15px;
+        margin: 18px 0 8px;
+        color: #334155;
+      }
+
+      p,
+      li {
+        font-size: 14px;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin-top: 12px;
+        page-break-inside: avoid;
+      }
+
+      .label {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+
+      .example {
+        margin-top: 12px;
+        padding: 12px 14px;
+        background: #eef2ff;
+        border-radius: 8px;
+        font-size: 13px;
+        color: #3730a3;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        font-size: 13px;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--border);
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--bg-soft);
+        font-weight: 600;
+      }
+
+      .footer {
+        margin-top: 36px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      @media print {
+        .toolbar {
+          display: none;
+        }
+
+        .page {
+          padding: 24px 0 0;
+          max-width: none;
+        }
+
+        h2 {
+          page-break-before: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="toolbar">
+        <button type="button" onclick="window.print()">Save as PDF / Print</button>
+        <button type="button" class="primary" onclick="window.print()">Download PDF</button>
+      </div>
+
+      <h1>Understanding Qualification Scores</h1>
+      <p class="subtitle">A simple guide for IDG Sales Intelligence — no technical background needed</p>
+
+      <div class="intro">
+        When a tender is scanned from TED or UNGM, the system reads the public notice and gives you
+        three kinds of scores. These are <strong>rule-based checks</strong> (not a chatbot guess). They
+        help your team decide whether to pursue a job, review it manually, or pass.
+      </div>
+
+      <h2>1. Extraction Confidence</h2>
+      <div class="card">
+        <span class="label">What it means</span>
+        <p>
+          <strong>How complete the notice information is.</strong> It answers: “Did the portal give us
+          enough basic facts to work with?”
+        </p>
+        <p>
+          This is <strong>not</strong> about AI being clever. It only measures whether key fields were
+          present on the public notice when it was imported.
+        </p>
+
+        <h3>How it is calculated</h3>
+        <ul>
+          <li>Starts at <strong>85%</strong> when all key fields are present</li>
+          <li>Goes down by <strong>12%</strong> for each missing item among:
+            <ul>
+              <li>Country</li>
+              <li>Buyer (who published the tender)</li>
+              <li>Estimated contract value</li>
+              <li>Submission deadline</li>
+            </ul>
+          </li>
+          <li>Never goes below <strong>35%</strong></li>
+        </ul>
+
+        <div class="example">
+          <strong>Examples:</strong> All four fields present → 85% · Two fields missing → 61% · Four
+          fields missing → 37%
+        </div>
+      </div>
+
+      <h2>2. Overall Score</h2>
+      <div class="card">
+        <span class="label">What it means</span>
+        <p>
+          <strong>One number from 0 to 100</strong> that shows how strong the tender looks for IDG
+          security work. Higher is better.
+        </p>
+
+        <h3>What adds to the score</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>What we look for</th>
+              <th>Points (approx.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Service fit</td>
+              <td>Words like security, guarding, surveillance, protection in the title or category</td>
+              <td>Up to 35</td>
+            </tr>
+            <tr>
+              <td>Country</td>
+              <td>Job is in an IDG target country</td>
+              <td>18 (or 8 if another country)</td>
+            </tr>
+            <tr>
+              <td>Buyer</td>
+              <td>Contracting authority name is listed</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Contract value</td>
+              <td>Estimated value is shown on the notice</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Deadline</td>
+              <td>Enough time left to submit (more days = more points)</td>
+              <td>Up to 15</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>What the recommendation means</h3>
+        <ul>
+          <li><strong>Bid</strong> — Strong fit; good candidate to pursue</li>
+          <li><strong>Review</strong> — Possible fit; a person should check before deciding</li>
+          <li><strong>No Bid</strong> — Weak fit; usually not worth pursuing</li>
+        </ul>
+
+        <div class="example">
+          A low score does not always mean the job is useless — it may mean the notice was missing
+          details. Human review can still overturn the suggestion.
+        </div>
+      </div>
+
+      <h2>3. Dimension Scores</h2>
+      <div class="card">
+        <span class="label">What it means</span>
+        <p>
+          <strong>Nine separate bars</strong>, each from 0 to 100. They break the Overall Score into
+          topics so you can see <em>why</em> a tender scored the way it did. Each bar has its own
+          simple rules — see the table below for <strong>what score you get and when</strong>.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Bar name</th>
+              <th>What it measures</th>
+              <th>How the score is set (0–100)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Service Match</strong></td>
+              <td>How closely the tender wording matches IDG security services (guarding, surveillance, protection, etc.)</td>
+              <td>
+                The system counts security-related words in the title and category.<br />
+                <strong>3+ words</strong> → 100 · <strong>2 words</strong> → ~86 · <strong>1 word</strong> → ~57 · <strong>none</strong> → 0
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Geography</strong></td>
+              <td>Whether the job country is an IDG priority market</td>
+              <td>
+                <strong>Target IDG country</strong> → 100<br />
+                <strong>Another country listed</strong> → 55<br />
+                <strong>Country missing</strong> → 0
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Industry</strong></td>
+              <td>How well the tender fits IDG’s service sector</td>
+              <td>
+                Usually <strong>Service Match + 10</strong> (capped at 100)<br />
+                If no service match at all → <strong>20</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Technology</strong></td>
+              <td>Whether the notice mentions IT or digital systems</td>
+              <td>
+                <strong>+25 points</strong> for each IT-related word found (e.g. software, IT, digital, cloud, network)<br />
+                Maximum → <strong>100</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Security Clearance</strong></td>
+              <td>Whether the word “security” appears in the notice (not the same as real government clearance)</td>
+              <td>
+                <strong>“Security” found</strong> in title or category → 80<br />
+                <strong>Not found</strong> → 35
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Framework</strong></td>
+              <td>Whether we know where the work will take place</td>
+              <td>
+                <strong>Country is listed</strong> → 60<br />
+                <strong>Country missing</strong> → 25
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Contract Value</strong></td>
+              <td>Whether a contract value was published on the notice</td>
+              <td>
+                <strong>Value shown</strong> → 70<br />
+                <strong>Value missing</strong> → 35
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Deadline</strong></td>
+              <td>How much time is left before the submission deadline</td>
+              <td>
+                <strong>21+ days left</strong> → 85<br />
+                <strong>7–20 days left</strong> → 55<br />
+                <strong>Less than 7 days</strong> → 20<br />
+                <strong>Deadline already passed</strong> → 5<br />
+                <strong>Deadline not listed</strong> → 20
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Strategic Customer</strong></td>
+              <td>Whether the beneficiary country is a strategic IDG market</td>
+              <td>
+                <strong>Target IDG country</strong> → 75<br />
+                <strong>Other or unknown</strong> → 40
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Reading the bars together</h3>
+        <ul>
+          <li><strong>High Service Match + low Geography</strong> — Good security job, possibly wrong country.</li>
+          <li><strong>High Security Clearance + low Service Match</strong> — The word “security” appears, but the job may not be core guarding work.</li>
+          <li><strong>Low Contract Value + low Deadline</strong> — Notice is missing money and/or time details; check the source portal manually.</li>
+        </ul>
+
+        <div class="example">
+          <strong>Tip:</strong> Dimension scores explain the <em>shape</em> of the opportunity. The
+          <strong>Overall Score</strong> (section 2) is still the main number used for Bid / Review / No Bid.
+        </div>
+      </div>
+
+      <div class="footer">
+        IDG Sales Intelligence · Qualification scoring guide · Generated for Qiko Studio users
+      </div>
+    </div>
+
+    <script>
+      if (new URLSearchParams(window.location.search).get("print") === "1") {
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            window.print();
+          }, 300);
+        });
+      }
+    </script>
+  </body>
+</html>

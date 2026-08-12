@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-version="%VITE_APP_VERSION%">
+
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' %VITE_CSP_CONNECT_SRC%;">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' %VITE_CSP_CONNECT_SRC%;">
+    
+    <!-- Cache-busting meta tags to prevent browser caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <title>Qiko Creator</title>
+    <link rel="icon" type="image/png" href="/qiko-icon.png" />
+    <!-- Qiko Brand Fonts: Satoshi for headlines, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+
+</html>

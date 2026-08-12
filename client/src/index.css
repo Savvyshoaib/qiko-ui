@@ -1,0 +1,549 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Qiko Brand Fonts - Satoshi for headlines, Inter for body */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  QIKO BRAND - Official Branding
+  Primary: Electric Indigo (#6366F1)
+  Secondary: Cyan (#22D3EE)
+  Background: Navy (#0D1B2A)
+*/
+:root {
+  --radius: 0.75rem;
+  
+  /* Qiko Brand Colors */
+  --brand-primary: #6366F1;
+  --brand-secondary: #22D3EE;
+  --brand-background: #0D1B2A;
+  
+  /* Qiko Dark Theme - Default */
+  --background: oklch(0.18 0.04 250);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.22 0.04 250);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.22 0.04 250);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.65 0.24 275);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.75 0.15 195);
+  --secondary-foreground: oklch(0.15 0.04 250);
+  --muted: oklch(0.25 0.04 250);
+  --muted-foreground: oklch(0.65 0.02 250);
+  --accent: oklch(0.75 0.15 195);
+  --accent-foreground: oklch(0.15 0.04 250);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.30 0.04 250);
+  --input: oklch(0.22 0.04 250);
+  --ring: oklch(0.65 0.24 275);
+  --chart-1: oklch(0.65 0.24 275);
+  --chart-2: oklch(0.75 0.15 195);
+  --chart-3: oklch(0.65 0.15 280);
+  --chart-4: oklch(0.70 0.15 60);
+  --chart-5: oklch(0.65 0.2 25);
+  --sidebar: oklch(0.12 0.03 250);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.65 0.24 275);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.22 0.04 250);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.28 0.04 250);
+  --sidebar-ring: oklch(0.65 0.24 275);
+  
+  /* Status colors */
+  --status-training-bg: oklch(0.25 0.08 85);
+  --status-training-text: oklch(0.80 0.12 85);
+  --status-ready-bg: oklch(0.25 0.10 155);
+  --status-ready-text: oklch(0.80 0.14 155);
+  --status-error-bg: oklch(0.25 0.10 25);
+  --status-error-text: oklch(0.75 0.15 25);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+/* Recharts: default tooltip cursor used a dark fill in some themes; keep a translucent wash so series colors stay visible */
+.recharts-wrapper .recharts-tooltip-cursor.recharts-rectangle {
+  fill: color-mix(in oklab, var(--foreground) 10%, transparent) !important;
+}
+
+/* ----- AI chat markdown (Streamdown): tables on dark panels ----- */
+@layer components {
+  .ai-chat-markdown {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: oklch(0.45 0.04 250 / 0.7) oklch(0.18 0.03 250 / 0.5);
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--foreground);
+  }
+
+  .ai-chat-markdown > *:first-child {
+    margin-top: 0;
+  }
+
+  .ai-chat-markdown > *:last-child {
+    margin-bottom: 0;
+  }
+  
+
+  .ai-chat-markdown table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0.75rem 0 1rem;
+    font-size: inherit;
+    line-height: inherit;
+    color: oklch(0.96 0.01 250);
+    background: oklch(0.14 0.025 250 / 0.85);
+    border: 1px solid oklch(0.38 0.04 250 / 0.55);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .ai-chat-markdown thead th {
+    padding: 0.65rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: oklch(0.98 0 0);
+    background: oklch(0.2 0.035 265 / 0.95);
+    border-bottom: 1px solid oklch(0.38 0.04 250 / 0.5);
+    vertical-align: bottom;
+    white-space: nowrap;
+  }
+
+  .ai-chat-markdown tbody td {
+    padding: 0.7rem 1rem;
+    vertical-align: top;
+    color: oklch(0.96 0.01 250);
+    border-bottom: 1px solid oklch(0.32 0.03 250 / 0.45);
+    background: transparent;
+  }
+
+  .ai-chat-markdown tbody tr:nth-child(even) td {
+    background: oklch(0.17 0.025 250 / 0.55);
+  }
+
+  .ai-chat-markdown tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Financial-style tables: first column label, rest numeric */
+  .ai-chat-markdown thead th:not(:first-child),
+  .ai-chat-markdown tbody td:not(:first-child) {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .ai-chat-markdown tbody tr:hover td {
+    background: oklch(0.3 0.08 275 / 0.42) !important;
+    color: oklch(0.99 0 0) !important;
+  }
+
+  .ai-chat-markdown tbody tr:hover td * {
+    color: inherit !important;
+  }
+
+  .ai-chat-markdown tbody tr:focus-within td {
+    background: oklch(0.28 0.07 275 / 0.38) !important;
+    color: oklch(0.99 0 0) !important;
+  }
+
+  .ai-chat-markdown a {
+    color: oklch(0.78 0.14 195);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ai-chat-markdown a:hover {
+    color: oklch(0.86 0.12 195);
+  }
+}
+
+/* ===== QIKO BRAND STYLES ===== */
+
+/* Qiko Gradient - Indigo to Cyan */
+.qiko-gradient {
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+}
+
+.qiko-gradient-text {
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Qiko Primary Button */
+.qiko-btn-primary {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2;
+  background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+  color: #ffffff;
+}
+
+.qiko-btn-primary:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.qiko-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Qiko Secondary Button */
+.qiko-btn-secondary {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2;
+  background: transparent;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+.qiko-btn-secondary:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Qiko Card - Glass morphism */
+.qiko-card {
+  @apply rounded-xl;
+  background: rgba(26, 42, 58, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.qiko-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* Section Label */
+.qiko-section-label {
+  @apply text-xs font-semibold tracking-widest uppercase mb-4;
+  color: #6366F1;
+}
+
+/* Glow effects */
+.qiko-glow {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+}
+
+.qiko-glow-strong {
+  box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Status indicators */
+.status-training {
+  background-color: var(--status-training-bg);
+  color: var(--status-training-text);
+}
+
+.status-ready {
+  background-color: var(--status-ready-bg);
+  color: var(--status-ready-text);
+}
+
+.status-error {
+  background-color: var(--status-error-bg);
+  color: var(--status-error-text);
+}
+ul.list-inside.list-disc.whitespace-normal.\[li_\&\]\:pl-6 {
+  padding-left: 40px;
+}
+
+/* Chat bubbles - Qiko style */
+.chat-bubble-user {
+  @apply rounded-2xl rounded-br-md;
+  background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+  color: #ffffff;
+}
+
+ul.list-inside.list-disc.whitespace-normal.\[li_\&\]\:pl-6 {
+  padding-left: 15px;
+}
+
+.chat-bubble-assistant {
+  @apply rounded-2xl rounded-bl-md;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Sidebar styles */
+.qiko-sidebar {
+  background: rgba(10, 15, 26, 0.98);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.qiko-sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-sm;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.qiko-sidebar-item:hover {
+  background: rgba(99, 102, 241, 0.08);
+  color: #ffffff;
+}
+
+.qiko-sidebar-item.active {
+  background: rgba(99, 102, 241, 0.12);
+  color: #6366F1;
+}
+
+.qiko-sidebar-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 24px;
+  background: #6366F1;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Input fields - Qiko style */
+.qiko-input {
+  @apply w-full px-4 py-3 rounded-lg transition-all duration-200;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.qiko-input:focus {
+  outline: none;
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.qiko-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Progress bar */
+.qiko-progress {
+  @apply h-2 rounded-full overflow-hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.qiko-progress-bar {
+  @apply h-full rounded-full transition-all duration-500;
+  background: linear-gradient(90deg, #6366F1 0%, #22D3EE 100%);
+}
+
+/* Avatar */
+.qiko-avatar {
+  @apply w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm;
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+  color: #ffffff;
+}
+
+/* Badge/Tag */
+.qiko-badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium;
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366F1;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Divider */
+.qiko-divider {
+  @apply my-6;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+.studio-worker-chat-textarea:focus,
+.studio-worker-chat-textarea:focus-visible {
+  outline: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+.studio-worker-chat-composer:focus-within {
+  box-shadow: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+/* Raheel   */
+.custom-tooltip span svg {
+    border-top: none;
+    border-left: none;
+}
+
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
+.sticky-block-div {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.sticky-block-div-scrolled {
+  background: #090E18;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (max-width: 550px) {
+  .sticky-block-div-scrolled {
+    top: 67px;
+  }
+}
